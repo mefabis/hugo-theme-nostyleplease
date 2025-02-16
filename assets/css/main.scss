@@ -148,3 +148,12 @@ figcaption {
   text-align: center;
   opacity: 0.5;
 }
+
+.embedded-html-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.embedded-html-container * {
+  max-width: 100%;
+}
