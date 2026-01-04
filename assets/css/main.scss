@@ -57,7 +57,7 @@
 }
 
 @mixin light-appearance {
-  @include theme(#ffffff, #212121, #666666, #1e70bf, #921292, #FFFF00, #000000);
+  @include theme(#ffffff, #212121, #212121, #1e70bf, #921292, #FFFF00, #000000);
 }
 
 body[a="dark"] { @include dark-appearance; }
@@ -95,7 +95,7 @@ p { margin: 1rem 0; }
 li { margin: 0.4rem 0; }
 
 .w {
-  max-width: 640px;
+  max-width: 50rem;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
@@ -146,7 +146,7 @@ img {
 
 figcaption {
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .embedded-html-container {
