@@ -22,14 +22,16 @@
 {{ end }}
 
 {{- if (gt (len $posts) 0) }}
-    {{- if .limit }}
-        {{ $posts = (first .limit $posts ) }}
-    {{ end }}
+    <table style="width: 100%; border-collapse: collapse; border: none;">
         {{- range $post := $posts -}}
-            <span>{{- ($post.Date | time.Format site.Params.theme_config.date_format) }}</span>
-            <a href="{{ $post.Permalink | relURL }}">{{ $post.Title }}</a>
+        <tr style="border: none;">
+            <td style="width: 175px; text-align: left; vertical-align: top; padding: 2px 2px 2px 5px; border: none;">
+                {{- ($post.Date | time.Format site.Params.theme_config.date_format) }}
+            </td>
+            <td style="text-align: left; vertical-align: top; padding: 2px 0 2px 2px; border: none;">
+                <a href="{{ $post.Permalink | relURL }}">{{ $post.Title }}</a>
+            </td>
+        </tr>
         {{ end }}
-        {{- if and .show_more $limit_exceeded }}
-            <li><a href="{{ .show_more_url | relURL }}">{{ .show_more_text | default "Show more..." }}</a></li>
-        {{ end }}
+    </table>
 {{ end }}
