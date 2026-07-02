@@ -22,16 +22,18 @@
 {{ end }}
 
 {{- if (gt (len $posts) 0) }}
-    <table style="width: 100%; border-collapse: collapse; border: none;">
-        {{- range $post := $posts -}}
-        <tr style="border: none;">
-            <td style="width: 175px; text-align: left; vertical-align: top; padding: 2px 2px 2px 5px; border: none;">
-                {{- ($post.Date | time.Format site.Params.theme_config.date_format) }}
-            </td>
-            <td style="text-align: left; vertical-align: top; padding: 2px 0 2px 2px; border: none;">
-                <a href="{{ $post.Permalink | relURL }}">{{ $post.Title }}</a>
-            </td>
-        </tr>
-        {{ end }}
-    </table>
+<table style="width: 100%; border-collapse: collapse; border: none;">
+  {{- range $post := $posts -}}
+  <tr style="border: none;">
+    <td style="padding: 2px 2px 0 5px; border: none; white-space: nowrap; vertical-align: top;">
+      {{- ($post.Date | time.Format site.Params.theme_config.date_format) -}}
+    </td>
+  </tr>
+  <tr style="border: none;">
+    <td style="padding: 0 2px 2px 20px; border: none; vertical-align: top;">
+      <a href="{{ $post.Permalink | relURL }}">{{ $post.Title }}</a>
+    </td>
+  </tr>
+  {{ end }}
+</table>
 {{ end }}
